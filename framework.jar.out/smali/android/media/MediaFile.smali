@@ -28,8 +28,6 @@
 
 .field public static final FILE_TYPE_APE:I = 0x132
 
-.field public static final FILE_TYPE_APE:I = 0x3e9
-
 .field public static final FILE_TYPE_ASF:I = 0x1a
 
 .field public static final FILE_TYPE_AVI:I = 0x1d

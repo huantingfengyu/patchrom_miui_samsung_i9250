@@ -22076,7 +22076,7 @@
 
     iget-object v1, v1, Landroid/widget/Editor;->mSelectionModifierCursorController:Landroid/widget/MiuiCursorController;
 
-    invoke-virtual {v1}, Landroid/widget/Editor$SelectionModifierCursorController;->isSelectionStartDragged()Z
+    invoke-virtual {v1}, Landroid/widget/MiuiCursorController;->isSelectionStartDragged()Z
 
     move-result v1
 
