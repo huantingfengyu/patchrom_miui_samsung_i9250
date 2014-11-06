@@ -4,7 +4,7 @@
 
 APKTOOL="$PORT_ROOT/tools/apktool --quiet"
 GIT_APPLY=$PORT_ROOT/tools/git.apply
-OUT=out
+BUILD_OUT=out
 
 SEP_FRAME="framework2.jar.out"
 
@@ -41,7 +41,7 @@ function applyPatch() {
 	done
 }
 
-if [ $2 = "$OUT/framework" ];then
+if [ $2 = "$BUILD_OUT/framework" ];then
 	echo "<<< cp miui editor files & fix xiaomihome fc"
-    cp -rf ../android/Editor/* $OUT/framework/smali/android/widget/
+    cp -rf ../android/Editor/* $BUILD_OUT/framework/smali/android/widget/
 fi
