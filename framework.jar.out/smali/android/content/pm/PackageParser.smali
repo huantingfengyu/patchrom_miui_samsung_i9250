@@ -18196,13 +18196,13 @@
     .line 1004
     move-object/from16 v0, p1
 
-    iget-object v17, v0, Landroid/content/pm/PackageParser$Package;->packageName:Ljava/lang/String;
+    iget-object v0, v0, Landroid/content/pm/PackageParser$Package;->packageName:Ljava/lang/String;
 
-    invoke-static {v12, v17}, Landroid/content/pm/Injector$PackageParserHook;->acceptNoCertificatesPackage(Ljava/util/jar/JarEntry;Ljava/lang/String;)Z
+    invoke-static {v12, v0}, Landroid/content/pm/Injector$PackageParserHook;->acceptNoCertificatesPackage(Ljava/util/jar/JarEntry;Ljava/lang/String;)Z
 
-    move-result v17
+    move-result v0
 
-    if-nez v17, :cond_3
+    if-nez v0, :cond_3
 
     const-string v17, "PackageParser"
 
