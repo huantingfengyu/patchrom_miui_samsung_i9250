@@ -1358,9 +1358,23 @@
 
     .line 386
     .local v9, notification:Landroid/app/Notification;
-    const v0, 0x10805af
+    const v0, 0x6020361
 
     iput v0, v9, Landroid/app/Notification;->icon:I
+
+    iget-object v0, p0, Lcom/android/server/DeviceStorageMonitorService;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v0
+
+    const v1, 0x6020360
+
+    invoke-static {v0, v1}, Landroid/graphics/BitmapFactory;->decodeResource(Landroid/content/res/Resources;I)Landroid/graphics/Bitmap;
+
+    move-result-object v0
+
+    iput-object v0, v9, Landroid/app/Notification;->largeIcon:Landroid/graphics/Bitmap;
 
     .line 387
     iput-object v10, v9, Landroid/app/Notification;->tickerText:Ljava/lang/CharSequence;

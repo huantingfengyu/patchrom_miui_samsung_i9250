@@ -676,7 +676,13 @@
     if-eqz v3, :cond_1
 
     .line 1049
+    const/4 v7, 0x0
+
+    .local v7, internalNetworkInterface:Ljava/net/NetworkInterface;
+    :try_start_miui
     invoke-static {p2}, Ljava/net/NetworkInterface;->getByName(Ljava/lang/String;)Ljava/net/NetworkInterface;
+    :try_end_miui
+    .catch Ljava/net/SocketException; {:try_start_miui .. :try_end_miui} :catch_miui
 
     move-result-object v7
 
@@ -687,6 +693,7 @@
 
     .line 1056
     :goto_0
+    :goto_miui
     if-nez v7, :cond_2
 
     .line 1057

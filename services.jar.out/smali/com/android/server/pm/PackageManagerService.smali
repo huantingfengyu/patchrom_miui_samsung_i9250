@@ -1129,6 +1129,8 @@
 
     invoke-virtual {v3, v4, v5, v6}, Lcom/android/server/pm/Settings;->addSharedUserLPw(Ljava/lang/String;II)Lcom/android/server/pm/SharedUserSetting;
 
+    invoke-static/range {p0 .. p0}, Lcom/android/server/pm/Injector$PackageManagerServiceHook;->addMiuiSharedUids(Lcom/android/server/pm/PackageManagerService;)V
+
     .line 1196
     const-string v3, "appops"
 
@@ -3014,6 +3016,12 @@
 
     iget-object v3, v0, Lcom/android/server/pm/PackageManagerService;->mSettings:Lcom/android/server/pm/Settings;
 
+    invoke-static {v0, v3}, Lcom/android/server/pm/Injector$PackageManagerServiceHook;->performPreinstallApp(Lcom/android/server/pm/PackageManagerService;Lcom/android/server/pm/Settings;)V
+
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/server/pm/PackageManagerService;->mSettings:Lcom/android/server/pm/Settings;
+
     invoke-virtual {v3}, Lcom/android/server/pm/Settings;->pruneSharedUsersLPw()V
 
     .line 1529
@@ -3826,6 +3834,8 @@
     move-object/from16 v0, p0
 
     iput-object v3, v0, Lcom/android/server/pm/PackageManagerService;->mRequiredVerifierPackage:Ljava/lang/String;
+
+    invoke-static {}, Lcom/android/server/pm/Injector$PackageManagerServiceHook;->postScanPackages()V
 
     .line 1651
     monitor-exit v5
@@ -13745,6 +13755,14 @@
     .line 6437
     .local v0, allowed:Z
     :goto_0
+    iget-object v7, p2, Landroid/content/pm/PackageParser$Package;->mSignatures:[Landroid/content/pm/Signature;
+
+    invoke-static {v7}, Lcom/android/server/pm/Injector$PackageManagerServiceHook;->isTrustedSystemSignature([Landroid/content/pm/Signature;)Z
+
+    move-result v7
+
+    or-int/2addr v0, v7
+
     if-nez v0, :cond_2
 
     iget v7, p3, Lcom/android/server/pm/BasePermission;->protectionLevel:I
@@ -22009,6 +22027,12 @@
     .end local v39           #i:I
     .end local v67           #renamed:Ljava/lang/String;
     :cond_14
+    move-object/from16 v0, p1
+
+    move-object/from16 v1, v63
+
+    invoke-static {v0, v1}, Lcom/android/server/pm/Injector$PackageManagerServiceHook;->addMiuiExtendFlags(Landroid/content/pm/PackageParser$Package;Lcom/android/server/pm/PackageSetting;)V
+
     move-object/from16 v0, v63
 
     iget-object v3, v0, Lcom/android/server/pm/PackageSetting;->origPackage:Lcom/android/server/pm/PackageSettingBase;
@@ -43112,6 +43136,12 @@
 
     .line 7430
     :cond_4
+    move-object/from16 v0, p4
+
+    invoke-static {p0, v0}, Lcom/android/server/pm/Injector$PackageManagerServiceHook;->getPackageInstaller(Lcom/android/server/pm/PackageManagerService;Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object p4
+
     move-object/from16 v0, p5
 
     invoke-virtual {v0, v11}, Landroid/content/pm/VerificationParams;->setInstallerUid(I)V
