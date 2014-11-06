@@ -707,7 +707,7 @@
 
     const/4 v2, 0x1
 
-    iput v2, v0, Lcom/android/server/AppOpsService$Op;->mode:I
+    iput v2, v1, Lcom/android/server/AppOpsService$Op;->mode:I
 
     :cond_miui_0
     invoke-virtual {p1, p2, v1}, Lcom/android/server/AppOpsService$Ops;->put(ILjava/lang/Object;)V
