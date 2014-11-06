@@ -241,6 +241,8 @@
 
 .field mFitSystemWindowsRequested:Z
 
+.field mFlipControllerFallbackKeys:Z
+
 .field private mFpsNumFrames:I
 
 .field private mFpsPrevTime:J

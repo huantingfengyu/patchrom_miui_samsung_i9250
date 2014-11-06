@@ -3239,7 +3239,7 @@
     goto :goto_0
 .end method
 
-.method public patternToHash(Ljava/util/List;)[B
+.method public static patternToHash(Ljava/util/List;)[B
     .locals 9
     .parameter
     .annotation system Ldalvik/annotation/Signature;

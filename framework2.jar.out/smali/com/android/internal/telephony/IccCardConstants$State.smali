@@ -32,6 +32,8 @@
 
 .field public static final enum DETECTED:Lcom/android/internal/telephony/IccCardConstants$State;
 
+.field public static final enum NETWORK_LOCKED:Lcom/android/internal/telephony/IccCardConstants$State;
+
 .field public static final enum NOT_READY:Lcom/android/internal/telephony/IccCardConstants$State;
 
 .field public static final enum PERM_DISABLED:Lcom/android/internal/telephony/IccCardConstants$State;
