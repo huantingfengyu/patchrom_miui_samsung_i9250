@@ -2972,7 +2972,7 @@
 
     .line 779
     .local v8, r:Landroid/content/res/Resources;
-    invoke-static {v0, p1}, Landroid/app/Injector$ApplicationPackageManagerHook;->setResourcesPackageName(Landroid/content/res/Resources;Landroid/content/pm/ApplicationInfo;)V
+    invoke-static {v8, p1}, Landroid/app/Injector$ApplicationPackageManagerHook;->setResourcesPackageName(Landroid/content/res/Resources;Landroid/content/pm/ApplicationInfo;)V
 
     if-nez v8, :cond_0
 
