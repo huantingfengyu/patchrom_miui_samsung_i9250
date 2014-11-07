@@ -1,0 +1,23 @@
+From 1dc486c91777f092a63244c916907deb894cdbde Mon Sep 17 00:00:00 2001
+From: liuxingghost <10759444413@qq.com>
+Date: Mon, 3 Nov 2014 21:12:07 +0800
+Subject: [PATCH] fi xx
+
+---
+ MiuiSystemUI/res/layout/navigation_bar.xml |   2 --
+ 1 file changed, 2 deletions(-)
+ 
+--- a/MiuiSystemUI/res/layout/navigation_bar.xml
++++ b/MiuiSystemUI/res/layout/navigation_bar.xml
+@@ -38,5 +38,4 @@
+         </LinearLayout>
+         <com.android.systemui.statusbar.policy.DeadZone android:layout_gravity="left" android:id="@id/deadzone" android:layout_width="@dimen/navigation_bar_deadzone_size" android:layout_height="fill_parent" />
+     </FrameLayout>
+-    <View android:id="@id/rot270" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+-</com.android.systemui.statusbar.phone.NavigationBarView>
+\ No newline at end of file
++</com.android.systemui.statusbar.phone.NavigationBarView>
+-- 
+1.7.9.5
+
+
