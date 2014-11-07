@@ -25,4 +25,6 @@ private-phone-priv-apps :=  BackupRestoreConfirmation \
 					  		ProxyHandler \
                       		SharedStorageBackup \
 					  		Shell \
-					  		Tag
+					  		Tag \
+					  		ThemesProvider
+
