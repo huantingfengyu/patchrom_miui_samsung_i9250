@@ -1221,6 +1221,17 @@
     return-void
 .end method
 
+.method public supplyDepersonalization(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
+    .locals 0
+    .parameter "netpin"
+    .parameter "type"
+    .parameter "result"
+
+    .prologue
+    .line 78
+    return-void
+.end method
+
 .method public supplyIccPin(Ljava/lang/String;Landroid/os/Message;)V
     .locals 0
     .parameter "pin"
@@ -1305,15 +1316,7 @@
     .parameter "response"
 
     .prologue
-    return-void
-.end method
-
-.method public supplyNetworkDepersonalization(Ljava/lang/String;Landroid/os/Message;)V
-    .locals 0
-    .parameter "netpin"
-    .parameter "result"
-
-    .prologue
+    .line 521
     return-void
 .end method
 

@@ -2812,6 +2812,18 @@
     throw v1
 .end method
 
+.method public registerForNetworkLocked(Landroid/os/Handler;ILjava/lang/Object;)V
+    .locals 0
+    .parameter "h"
+    .parameter "what"
+    .parameter "obj"
+
+    .prologue
+    invoke-virtual {p0, p1, p2, p3}, Lcom/android/internal/telephony/uicc/IccCardProxy;->registerForPersoLocked(Landroid/os/Handler;ILjava/lang/Object;)V
+
+    return-void
+.end method
+
 .method public registerForPersoLocked(Landroid/os/Handler;ILjava/lang/Object;)V
     .locals 6
     .parameter "h"
@@ -3245,53 +3257,65 @@
     throw v0
 .end method
 
-.method public supplyNetworkDepersonalization(Ljava/lang/String;Landroid/os/Message;)V
+.method public supplyDepersonalization(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
     .locals 3
     .parameter "pin"
+    .parameter "type"
     .parameter "onComplete"
 
     .prologue
+    .line 665
     iget-object v2, p0, Lcom/android/internal/telephony/uicc/IccCardProxy;->mLock:Ljava/lang/Object;
 
     monitor-enter v2
 
+    .line 666
     :try_start_0
     iget-object v1, p0, Lcom/android/internal/telephony/uicc/IccCardProxy;->mUiccApplication:Lcom/android/internal/telephony/uicc/UiccCardApplication;
 
     if-eqz v1, :cond_1
 
+    .line 667
     iget-object v1, p0, Lcom/android/internal/telephony/uicc/IccCardProxy;->mUiccApplication:Lcom/android/internal/telephony/uicc/UiccCardApplication;
 
-    invoke-virtual {v1, p1, p2}, Lcom/android/internal/telephony/uicc/UiccCardApplication;->supplyNetworkDepersonalization(Ljava/lang/String;Landroid/os/Message;)V
+    invoke-virtual {v1, p1, p2, p3}, Lcom/android/internal/telephony/uicc/UiccCardApplication;->supplyDepersonalization(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
 
+    .line 674
     :cond_0
     monitor-exit v2
 
+    .line 675
     :goto_0
     return-void
 
+    .line 668
     :cond_1
-    if-eqz p2, :cond_0
+    if-eqz p3, :cond_0
 
+    .line 669
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v1, "CommandsInterface is not set."
 
     invoke-direct {v0, v1}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 
+    .line 670
     .local v0, e:Ljava/lang/Exception;
-    invoke-static {p2}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;)Landroid/os/AsyncResult;
+    invoke-static {p3}, Landroid/os/AsyncResult;->forMessage(Landroid/os/Message;)Landroid/os/AsyncResult;
 
     move-result-object v1
 
     iput-object v0, v1, Landroid/os/AsyncResult;->exception:Ljava/lang/Throwable;
 
-    invoke-virtual {p2}, Landroid/os/Message;->sendToTarget()V
+    .line 671
+    invoke-virtual {p3}, Landroid/os/Message;->sendToTarget()V
 
+    .line 672
     monitor-exit v2
 
     goto :goto_0
 
+    .line 674
     .end local v0           #e:Ljava/lang/Exception;
     :catchall_0
     move-exception v1
@@ -3301,6 +3325,27 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v1
+.end method
+
+.method public supplyNetworkDepersonalization(Ljava/lang/String;Landroid/os/Message;)V
+    .locals 1
+    .parameter "pin"
+    .parameter "onComplete"
+
+    .prologue
+    sget-object v0, Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$PersoSubState;->PERSOSUBSTATE_SIM_NETWORK:Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$PersoSubState;
+
+    invoke-virtual {v0}, Lcom/android/internal/telephony/uicc/IccCardApplicationStatus$PersoSubState;->ordinal()I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->toString(I)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p0, p1, v0, p2}, Lcom/android/internal/telephony/uicc/IccCardProxy;->supplyDepersonalization(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
+
+    return-void
 .end method
 
 .method public supplyPin(Ljava/lang/String;Landroid/os/Message;)V
@@ -3648,23 +3693,38 @@
 .end method
 
 .method public unregisterForNetworkLocked(Landroid/os/Handler;)V
+    .locals 0
+    .parameter "h"
+
+    .prologue
+    invoke-virtual {p0, p1}, Lcom/android/internal/telephony/uicc/IccCardProxy;->unregisterForPersoLocked(Landroid/os/Handler;)V
+
+    return-void
+.end method
+
+.method public unregisterForPersoLocked(Landroid/os/Handler;)V
     .locals 2
     .parameter "h"
 
     .prologue
+    .line 579
     iget-object v1, p0, Lcom/android/internal/telephony/uicc/IccCardProxy;->mLock:Ljava/lang/Object;
 
     monitor-enter v1
 
+    .line 580
     :try_start_0
-    iget-object v0, p0, Lcom/android/internal/telephony/uicc/IccCardProxy;->mNetworkLockedRegistrants:Landroid/os/RegistrantList;
+    iget-object v0, p0, Lcom/android/internal/telephony/uicc/IccCardProxy;->mPersoLockedRegistrants:Landroid/os/RegistrantList;
 
     invoke-virtual {v0, p1}, Landroid/os/RegistrantList;->remove(Landroid/os/Handler;)V
 
+    .line 581
     monitor-exit v1
 
+    .line 582
     return-void
 
+    .line 581
     :catchall_0
     move-exception v0
 
