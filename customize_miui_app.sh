@@ -45,10 +45,10 @@ if [ $1 = "MiuiSystemUI" ];then
     applyPatch $1 $2
 fi
 
-#if [ $1 = "Settings" ];then
-# 	echo "<<< fix settings fc"
-#	applyPatch $1 $2
-#fi
+if [ $1 = "Settings" ];then
+ 	echo "<<< fix settings fc"
+	applyPatch $1 $2
+fi
 
 # if [ $1 = "QuickSearchBox" ];then
 # 	echo "<<< fix searchbox fc"
