@@ -40,10 +40,10 @@ function mergyXmlPart() {
 	done
 }
 
-# if [ $1 = "MiuiSystemUI" ];then
-# 	echo "<<< fix sytemui fc"
-# 	applyPatch $1 $2
-# fi
+if [ $1 = "MiuiSystemUI" ];then
+ 	echo "<<< fix sytemui fc"# 	
+    applyPatch $1 $2
+fi
 
 # if [ $1 = "Settings" ];then
 # 	echo "<<< fix settings fc"

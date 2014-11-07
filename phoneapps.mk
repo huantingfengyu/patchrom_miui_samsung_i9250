@@ -12,7 +12,8 @@ private-phone-apps :=		Bluetooth \
 					  		PacProcessor \
 					  		Nfc \
 					  		WAPPushManager \
-                      		Stk
+                      		Stk \
+                      		PrintSpooler
 					  		
 
 private-phone-priv-apps :=  BackupRestoreConfirmation \

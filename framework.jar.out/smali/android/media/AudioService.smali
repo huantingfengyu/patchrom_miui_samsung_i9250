@@ -2396,7 +2396,7 @@
     return-void
 .end method
 
-.method static synthetic access$9400(Landroid/media/AudioService;)Landroid/view/VolumePanel;
+.method static synthetic access$9400(Landroid/media/AudioService;)Lmiui/view/VolumePanel;
     .locals 1
     .parameter "x0"
 
@@ -2407,7 +2407,7 @@
     return-object v0
 .end method
 
-.method static synthetic access$9402(Landroid/media/AudioService;Landroid/view/VolumePanel;)Landroid/view/VolumePanel;
+.method static synthetic access$9402(Landroid/media/AudioService;Lmiui/view/VolumePanel;)Lmiui/view/VolumePanel;
     .locals 0
     .parameter "x0"
     .parameter "x1"
@@ -3264,7 +3264,7 @@
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, v1}, Landroid/view/VolumePanel;->postDisplaySafeVolumeWarning(I)V
+    invoke-virtual {v0, v1}, Lmiui/view/VolumePanel;->postDisplaySafeVolumeWarning(I)V
 
     .line 4490
     :goto_0
@@ -5724,7 +5724,7 @@
     .line 4418
     iget-object v0, p0, Landroid/media/AudioService;->mVolumePanel:Lmiui/view/VolumePanel;
 
-    invoke-virtual {v0, p1}, Landroid/view/VolumePanel;->postMasterVolumeChanged(I)V
+    invoke-virtual {v0, p1}, Lmiui/view/VolumePanel;->postMasterVolumeChanged(I)V
 
     .line 4433
     :goto_0
@@ -8525,7 +8525,7 @@
     .line 4456
     iget-object v0, p0, Landroid/media/AudioService;->mVolumePanel:Lmiui/view/VolumePanel;
 
-    invoke-virtual {v0, p1, p2}, Landroid/view/VolumePanel;->postVolumeChanged(II)V
+    invoke-virtual {v0, p1, p2}, Lmiui/view/VolumePanel;->postVolumeChanged(II)V
 
     .line 4471
     :goto_0
@@ -12243,7 +12243,7 @@
 
     or-int/lit8 v1, p3, 0x1
 
-    invoke-virtual {v0, v1}, Landroid/view/VolumePanel;->postDisplaySafeVolumeWarning(I)V
+    invoke-virtual {v0, v1}, Lmiui/view/VolumePanel;->postDisplaySafeVolumeWarning(I)V
 
     .line 1120
     new-instance v0, Landroid/media/AudioService$StreamVolumeCommand;

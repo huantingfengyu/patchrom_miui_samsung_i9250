@@ -3253,28 +3253,22 @@
     .end annotation
 
     .prologue
-    .line 823
-    .local p1, pattern:Ljava/util/List;,"Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
-    if-nez p1, :cond_0
+    .local p0, pattern:Ljava/util/List;,"Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
+    if-nez p0, :cond_0
 
-    .line 824
     const/4 v1, 0x0
 
-    .line 838
     :goto_0
     return-object v1
 
-    .line 827
     :cond_0
-    invoke-interface {p1}, Ljava/util/List;->size()I
+    invoke-interface {p0}, Ljava/util/List;->size()I
 
     move-result v5
 
-    .line 828
     .local v5, patternSize:I
     new-array v6, v5, [B
 
-    .line 829
     .local v6, res:[B
     const/4 v2, 0x0
 
@@ -3282,24 +3276,18 @@
     :goto_1
     if-ge v2, v5, :cond_1
 
-    .line 830
-    invoke-interface {p1, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-interface {p0, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lcom/android/internal/widget/LockPatternView$Cell;
 
-    .line 831
     .local v0, cell:Lcom/android/internal/widget/LockPatternView$Cell;
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternView$Cell;->getRow()I
 
     move-result v7
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/LockPatternUtils;->getLockPatternSize()B
-
-    move-result v8
-
-    mul-int/2addr v7, v8
+    mul-int/lit8 v7, v7, 0x3
 
     invoke-virtual {v0}, Lcom/android/internal/widget/LockPatternView$Cell;->getColumn()I
 
@@ -3311,12 +3299,10 @@
 
     aput-byte v7, v6, v2
 
-    .line 829
     add-int/lit8 v2, v2, 0x1
 
     goto :goto_1
 
-    .line 834
     .end local v0           #cell:Lcom/android/internal/widget/LockPatternView$Cell;
     :cond_1
     :try_start_0
@@ -3326,7 +3312,6 @@
 
     move-result-object v3
 
-    .line 835
     .local v3, md:Ljava/security/MessageDigest;
     invoke-virtual {v3, v6}, Ljava/security/MessageDigest;->digest([B)[B
     :try_end_0
@@ -3334,11 +3319,9 @@
 
     move-result-object v1
 
-    .line 836
     .local v1, hash:[B
     goto :goto_0
 
-    .line 837
     .end local v1           #hash:[B
     .end local v3           #md:Ljava/security/MessageDigest;
     :catch_0
@@ -3347,7 +3330,6 @@
     .local v4, nsa:Ljava/security/NoSuchAlgorithmException;
     move-object v1, v6
 
-    .line 838
     goto :goto_0
 .end method
 
@@ -4643,7 +4625,7 @@
     .line 1018
     const-string v0, "lock_pattern_size"
 
-    invoke-direct {p0, v0, p1, p2}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;J)V
+    invoke-virtual {p0, v0, p1, p2}, Lcom/android/internal/widget/LockPatternUtils;->setLong(Ljava/lang/String;J)V
 
     .line 1019
     return-void
@@ -4833,8 +4815,8 @@
     return-void
 .end method
 
-.method public stringToPattern(Ljava/lang/String;)Ljava/util/List;
-    .locals 7
+.method public static stringToPattern(Ljava/lang/String;)Ljava/util/List;
+    .locals 8
     .parameter "string"
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -4856,16 +4838,12 @@
 
     .line 785
     .local v3, result:Ljava/util/List;,"Ljava/util/List<Lcom/android/internal/widget/LockPatternView$Cell;>;"
-    invoke-virtual {p0}, Lcom/android/internal/widget/LockPatternUtils;->getLockPatternSize()B
-
-    move-result v4
+    const/4 v4, 0x3
 
     .line 786
     .local v4, size:B
-    invoke-static {v4}, Lcom/android/internal/widget/LockPatternView$Cell;->updateSize(B)V
-
     .line 788
-    invoke-virtual {p1}, Ljava/lang/String;->getBytes()[B
+    invoke-virtual {p0}, Ljava/lang/String;->getBytes()[B
 
     move-result-object v1
 
@@ -4884,11 +4862,13 @@
 
     .line 791
     .local v0, b:B
-    div-int v5, v0, v4
+    div-int/lit8 v5, v0, 0x3
 
-    rem-int v6, v0, v4
+    rem-int/lit8 v6, v0, 0x3
 
-    invoke-static {v5, v6, v4}, Lcom/android/internal/widget/LockPatternView$Cell;->of(IIB)Lcom/android/internal/widget/LockPatternView$Cell;
+    const/4 v7, 0x3
+
+    invoke-static {v5, v6, v7}, Lcom/android/internal/widget/LockPatternView$Cell;->of(IIB)Lcom/android/internal/widget/LockPatternView$Cell;
 
     move-result-object v5
 

@@ -3360,17 +3360,14 @@
     return-void
 .end method
 
-.method public supplyDepersonalization(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
+.method public supplyNetworkDepersonalization(Ljava/lang/String;Landroid/os/Message;)V
     .locals 0
     .parameter "netpin"
-    .parameter "type"
     .parameter "result"
 
     .prologue
-    .line 446
-    invoke-direct {p0, p3}, Lcom/android/internal/telephony/test/SimulatedCommands;->unimplemented(Landroid/os/Message;)V
+    invoke-direct {p0, p2}, Lcom/android/internal/telephony/test/SimulatedCommands;->unimplemented(Landroid/os/Message;)V
 
-    .line 447
     return-void
 .end method
 

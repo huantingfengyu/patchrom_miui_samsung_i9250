@@ -5456,10 +5456,6 @@
     :cond_0
     new-instance v1, Ljava/lang/SecurityException;
 
-    move-object/from16 v0, p0
-
-    invoke-static {v0, v8}, Lcom/android/server/pm/Injector$PackageManagerServiceHook;->ignoreMiuiFrameworkRes(Lcom/android/server/pm/PackageManagerService;Ljava/util/HashSet;)V
-
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V

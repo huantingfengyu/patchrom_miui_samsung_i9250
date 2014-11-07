@@ -647,9 +647,6 @@
 .method public abstract stopDtmf(Landroid/os/Message;)V
 .end method
 
-.method public abstract supplyDepersonalization(Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
-.end method
-
 .method public abstract supplyIccPin(Ljava/lang/String;Landroid/os/Message;)V
 .end method
 
@@ -672,6 +669,9 @@
 .end method
 
 .method public abstract supplyIccPukForApp(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/os/Message;)V
+.end method
+
+.method public abstract supplyNetworkDepersonalization(Ljava/lang/String;Landroid/os/Message;)V
 .end method
 
 .method public abstract switchWaitingOrHoldingAndActive(Landroid/os/Message;)V

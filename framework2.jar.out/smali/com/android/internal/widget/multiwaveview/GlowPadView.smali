@@ -3711,7 +3711,7 @@
     invoke-direct {p0, v5, v6}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->updatePointCloudPosition(FF)V
 
     .line 636
-    invoke-direct {p0, v7, v7}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->hideTargets(ZZ)V
+    invoke-virtual {p0, v7, v7}, Lcom/android/internal/widget/multiwaveview/GlowPadView;->hideTargets(ZZ)V
 
     goto :goto_1
 .end method
