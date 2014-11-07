@@ -1,0 +1,29 @@
+From cff5c88504d8cce3ee80039d520798f52439cdc8 Mon Sep 17 00:00:00 2001
+From: liuxingghost <10759444413@qq.com>
+Date: Fri, 7 Nov 2014 21:21:10 +0800
+Subject: [PATCH] fix settings fc
+
+---
+ Settings/res/xml/settings_headers.xml |   3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+index c4fb0ab..8b5b587 100644
+--- a/Settings/res/xml/settings_headers.xml
++++ b/Settings/res/xml/settings_headers.xml
+@@ -15,7 +15,6 @@
+     </header>
+     <header android:icon="@drawable/ic_settings_data_usage" android:id="@id/data_usage_settings" android:title="@string/data_usage_summary_title" android:fragment="com.android.settings.DataUsageSummary" />
+     <header android:icon="@drawable/ic_application_settings" android:id="@id/restrict_background_data" android:title="@string/restrict_background_data_title" android:fragment="com.android.settings.WirelessSettings" />
+-    <header android:icon="@drawable/ic_settings_nfc_payment" android:id="@id/nfc_payment_settings" android:title="@string/nfc_payment_settings_title" android:fragment="com.android.settings.nfc.PaymentSettings" />
+     <header android:id="@id/operator_settings" android:fragment="com.android.settings.WirelessSettings">
+         <intent android:action="com.android.settings.OPERATOR_APPLICATION_SETTING" />
+     </header>
+@@ -75,4 +74,4 @@
+     <header android:icon="@drawable/ic_about_settings" android:id="@id/about_settings" android:title="@string/about_settings">
+         <intent android:targetPackage="com.android.settings" android:targetClass="com.android.settings.Settings$DeviceInfoSettingsActivity" />
+     </header>
+-</preference-headers>
+\ No newline at end of file
++</preference-headers>
+-- 
+1.7.9.5
