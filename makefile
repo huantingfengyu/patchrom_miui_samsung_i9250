@@ -50,7 +50,3 @@ local-pre-zip-misc:
 	echo "<<< cp othoer * files to $(ZIP_DIR)"
 	cp other/boot.img $(ZIP_DIR)/boot.img
 	cp -rf other/system $(ZIP_DIR)/
-
-	echo "<<< rm -r system files"
-	rm -rf stockrom/system/recovery-from-boot.p
-	rm -rf stockrom/system/etc/install-cm-recovery.sh
