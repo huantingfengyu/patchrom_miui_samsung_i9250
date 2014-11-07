@@ -1070,7 +1070,7 @@
 
     const v2, 0x1020266
 
-    invoke-virtual {v1, v2},  Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
@@ -1084,7 +1084,7 @@
 
     const v2, 0x1020267
 
-    invoke-virtual {v1, v2}, Landroid/widget/LinearLayout;->findViewById(I)Landroid/view/View;
+    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
     move-result-object v1
 
