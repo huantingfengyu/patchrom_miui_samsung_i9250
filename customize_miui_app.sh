@@ -50,7 +50,7 @@ if [ $1 = "Settings" ];then
 	applyPatch $1 $2
 fi
 
-# if [ $1 = "QuickSearchBox" ];then
-# 	echo "<<< fix searchbox fc"
-# 	applyPatch $1 $2
-# fi
+if [ $1 = "QuickSearchBox" ];then
+ 	echo "<<< fix searchbox fc"
+ 	applyPatch $1 $2
+fi

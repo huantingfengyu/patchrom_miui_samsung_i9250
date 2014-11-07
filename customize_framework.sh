@@ -44,4 +44,6 @@ function applyPatch() {
 if [ $2 = "$BUILD_OUT/framework" ];then
 	echo "<<< cp miui editor files & fix xiaomihome fc"
     cp -rf ../android/Editor/* $BUILD_OUT/framework/smali/android/widget/
+    echo "<<< cp modify files to out dir"
+    cp -rf overlay/framework/smali/* $BUILD_OUT/framework/smali
 fi
