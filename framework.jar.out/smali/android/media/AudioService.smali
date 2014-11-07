@@ -8514,10 +8514,6 @@
 
     .prologue
     .line 4455
-    iget-object v0, p0, Landroid/media/AudioService;->mUiContext:Landroid/content/Context;
-
-    if-eqz v0, :cond_0
-
     iget-object v0, p0, Landroid/media/AudioService;->mVolumePanel:Lmiui/view/VolumePanel;
 
     if-eqz v0, :cond_0
